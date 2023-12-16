@@ -10,7 +10,7 @@ from io import BytesIO
 
 
 
-model = "lemonpuddi/llama-2-7b-miniguanaco"
+model = "tom92119/llama-2-7b-bedtime-story"
 tokenizer = AutoTokenizer.from_pretrained(model)
 
 falcon_pipeline = transformers.pipeline("text-generation",
@@ -27,7 +27,7 @@ def get_completion_falcon(input):
   prompt = f"<s>[INST] {input} [/INST]"
   #print(prompt)
   falcon_response = falcon_pipeline(prompt,
-                                    max_length=500,
+                                    max_length=300,
                                     do_sample=True,
                                     top_k=10,
                                     num_return_sequences=1,
@@ -52,6 +52,9 @@ def generate_text():
     # Call the text generation function
     response = get_completion_falcon(prompt)
     generated_text = response[0]['generated_text']
+    parts = generated_text.split('[/INST]')
+    generated_text = parts[1].strip()
+  
     print("Text generated!")
 
     print("Sending text ...")
