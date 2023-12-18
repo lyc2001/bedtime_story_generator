@@ -4,30 +4,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="G:\My Drive\NTHU\112s1\ML\final project\bedtime_story_generator\static\styles.css" />
-    <link rel="icon" type="image/x-icon" href="G:\My Drive\NTHU\112s1\ML\final project\bedtime_story_generator\static\icon.png" />
-    <title>Text Generation App</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}" /> -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='icon.png') }}" />
+    <title>Bedtime Story Generator Using Emojis</title>
 </head>
 <body>
-    <h1>Text Generation App</h1>
-    <p>Generate text with our AI model! Enter your prompt below and hit "Create" to generate text.</p>
-    <form action="/submit-prompt" method="post" id="submission-form">
-        <ul>
-            <li>
-                <label for="prompt">Prompt:</label>
-                <input type="text" id="prompt" name="prompt-input" />
-            </li>
-            <li class="button">
-                <button type="submit">Create</button>
-            </li>
-        </ul>
-    </form>
-    <div class="generated-text">
-        {% if generated_text %}
-            <p>{{ generated_text }}</p>
-        {% else %}
-            <p>No text generated yet. Enter a prompt and click "Create" to see generated text here.</p>
-        {% endif %}
+    <div class="centered-content">
+        <h1>Bedtime Story Generator Using Emojis</h1>
+        <!-- <p>Generate bedtime stories with our model!</p> -->
+        <p> Enter your 3 emojis below and hit "Create" to generate your bedtime story.</p>
+        <form action="/submit-prompt" method="post" id="submission-form">
+            <!-- <ul> -->
+                <!-- <li> -->
+                    <div class="form-container ">
+                        <div class="dropdown-container">
+                            <!-- <label for="prompt">Prompt:</label> -->
+                            <label for="emojiDropdown1">Role:</label>
+                            <select id="emojiDropdown1" name="emoji1">
+                                <option value=" "> </option>
+                                <option value="🦄">🦄</option>
+                                <option value="🐶">🐶</option>
+                                <option value="👸">👸</option>
+                                <option value="🧙‍♂️">🧙‍♂️</option>
+                                <option value="🤴">🤴</option>
+                                <option value="🐿️">🐿️</option>
+                                <option value="👧🏻">👧🏻</option>
+                                <option value="🐘">🐘</option>
+                                <option value="🐻">🐻</option>
+                                <option value="🐰">🐰</option>
+                                <option value="🐱">🐱</option>
+                                <option value="🦔">🦔</option>
+                                <option value="👦">👦</option>
+                                <option value="🐟">🐟</option>
+                                <option value="🐼">🐼</option>
+                            </select>
+
+                            <label for="emojiDropdown2">Place:</label>
+                            <select id="emojiDropdown2" name="emoji2">
+                                <option value=" "> </option>
+                                <option value="🏰">🏰</option>
+                                <option value="🏡">🏡</option>
+                                <option value="🏥">🏥</option>
+                                <option value="🏫">🏫</option>
+                                <option value="🎢">🎢</option>
+                                <option value="🏥">🏥</option>
+                                <option value="🏖️">🏖️</option>
+                                <option value="🌳">🌳</option>
+                                <option value="🏞️">🏞️</option>
+                            </select>
+
+                            <label for="emojiDropdown2">Theme:</label>
+                            <select id="emojiDropdown3" name="emoji3">
+                                <option value=" "> </option>
+                                <option value="🤝">🤝</option>
+                                <option value="🔮">🔮</option>
+                                <option value="📚">📚</option>
+                                <option value="👨‍👩‍👦‍👦">👨‍👩‍👦‍👦</option>
+                                <option value="👭">👭</option>
+                                <option value="💪">💪</option>
+                                <option value="🙏">🙏</option>
+                                <option value="❤️">❤️</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-button-container">
+                        <input type="text" id="prompt" name="prompt-input" />
+                        <button type="submit" class="button">Create</button>
+                    </div>
+                <!-- </li> -->
+            <!-- </ul> -->
+        </form>
+        <div class="generated-text">
+            {% if generated_text %}
+                <p>{{ generated_text }}</p>
+            {% else %}
+                <p>No text generated yet. Enter a prompt and click "Create" to see generated text here.</p>
+            {% endif %}
+        </div>
+       
     </div>
+    <script>
+        function updateTextInput() {
+            var emoji1 = document.getElementById('emojiDropdown1').value;
+            var emoji2 = document.getElementById('emojiDropdown2').value;
+            var emoji3 = document.getElementById('emojiDropdown3').value;
+    
+           
+            document.getElementById('prompt').value = emoji1 + " " + emoji2 + " " + emoji3;
+        }
+    
+       
+        document.getElementById('emojiDropdown1').addEventListener('change', updateTextInput);
+        document.getElementById('emojiDropdown2').addEventListener('change', updateTextInput);
+        document.getElementById('emojiDropdown3').addEventListener('change', updateTextInput);
+    
+        window.onload = updateTextInput;
+    </script>
+    
 </body>
 </html>
