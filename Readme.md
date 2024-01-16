@@ -8,7 +8,7 @@ We emphasize the unique capability of our fine-tuned Large Language Model (LLM) 
 
 [**Customized datasets:**](https://huggingface.co/datasets/lemonpuddi/ml-emoji-story) You can find the customized dataset we prepared for this project [here](https://huggingface.co/datasets/lemonpuddi/ml-emoji-story) on huggingface.
 
-[**Llama 2 weight:**](NousResearch/llama-2-7b-chat-hf) You can find the Llama 2 weight we used in our project [here](NousResearch/llama-2-7b-chat-hf).
+[**Llama 2 weight:**]((https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)) You can find the Llama 2 weight we used in our project [here]((https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)).
 
 # Code Execution Instructions
 **ML_final_project.ipynb:** There is a cell block named **EXPERIMENT** where you can try different emoji combinations and generate a bedtime story with our finetuned model.
