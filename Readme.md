@@ -2,7 +2,7 @@
 We emphasize the unique capability of our fine-tuned Large Language Model (LLM) to generate children-appropriate bedtime stories from just a few emojis. Our project showcases the model's ability to interpret the simplicity and expressiveness of emojis, transforming them into engaging and age-appropriate narratives. This highlights the innovative use of emojis as a storytelling tool and sets the foundation for exploring the fine-tuning process, methodologies, and the creative potential of our model in crafting captivating stories for a young audience.
 
 # Setup Instructions for Working Environment
-**ML_final_project.ipynb:** A jupyter notebook where we carried out various experiments. Required packages are all included, simply run the cell blocks sequentially.
+**ML_final_project.ipynb:** A jupyter notebook where we carried out various experiments. Required packages are all included, simply run all of the cell blocks sequentially.
 
 **deploy_website.ipynb:** A jupyter notebook which can be run and the demo website will be deployed locally.
 
