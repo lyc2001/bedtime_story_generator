@@ -1,3 +1,7 @@
+# Final Report
+This is the final project for Introduction to Machine Learning (CS460200) at National Tsing Hua University.\
+Final report of this project can be found at [ML Final Report](Group26_finalreport.pdf "ML Final Report").
+
 # Introduction: A Bedtime Story Generator Using Emojis by Fine-tuning LLM
 We emphasize the unique capability of our fine-tuned Large Language Model (LLM) to generate children-appropriate bedtime stories from just a few emojis. Our project showcases the model's ability to interpret the simplicity and expressiveness of emojis, transforming them into engaging and age-appropriate narratives. This highlights the innovative use of emojis as a storytelling tool and sets the foundation for exploring the fine-tuning process, methodologies, and the creative potential of our model in crafting captivating stories for a young audience.
 
